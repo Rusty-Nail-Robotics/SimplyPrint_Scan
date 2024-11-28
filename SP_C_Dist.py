@@ -5,9 +5,9 @@ import time
 
 filament0_id = None
 filament1_id = None
-urlID = "{COMPANY ID HERE"
+urlID = "{Your URL ID Here}"#{Your URL ID Here}
 headers = {
-			'X-API-KEY': '{API KEY HERE}',
+			'X-API-KEY': '{Your API KEY Here}', #{Your API KEY Here},
 			'accept': 'application/json',
 			'content-type': 'application/json'
 			}
@@ -38,7 +38,7 @@ def main():
 			print("Unassign Function Not Setup")
 			time.sleep(5)
 		else:
-			Assign_Filament(initial_Input)
+			Assign_Filament(initial_Input, printerIDs, printer_dict)
 		
 		os.system('cls')
 	
@@ -76,11 +76,11 @@ def Delete_Filament():
 		
 		
 			
-def Assign_Filament(printerToChange):
+def Assign_Filament(printerToChange, printerIDs, printer_dict):
 			
-			if(printerToChangeInput == "ABORT"):
+			if(printerToChange == "ABORT"):
 				return;
-			printerToChange = printerToChangeInput.split()
+			printerToChange = printerToChange.split()
 			if(len(printerToChange) != 2):
 				print("Input must be 2 items.  'printer id' 'extruder'.  ex. '20102 1'")
 				time.sleep(2)
